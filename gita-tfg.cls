@@ -376,7 +376,7 @@
 
 \newcommand{\@address}{}
 \newcommand{\address}[1]{\renewcommand{\@address}{#1}}
-\newcommand{\@city}{Ciudad Real}
+\newcommand{\@city}{Talavera de la Reina}
 \newcommand{\city}[1]{\renewcommand{\@city}{#1}}
 \newcommand{\@country}{Spain}
 \newcommand{\country}[1]{\renewcommand{\@country}{#1}}
