@@ -1,6 +1,0 @@
-# -*- mode:python; coding:utf-8; tab-width:4 -*-
-
-make = load('$testdir/make.py')
-
-make.make_and_clean('tfg', '$basedir/examples/tfg')
-make.make_and_clean('anteproyecto', '$basedir/examples/anteproyecto')
