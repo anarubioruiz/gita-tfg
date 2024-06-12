@@ -372,7 +372,7 @@
 \newcommand{\theauthor}{\@author}
 
 \newcommand{\@putAuthor}{
-  Autor: \@author\par}
+  Autoría: \@author\par}
 
 \newcommand{\@address}{}
 \newcommand{\address}[1]{\renewcommand{\@address}{#1}}
@@ -403,13 +403,12 @@
 \newcommand{\@advisorFirst}{}
 \newcommand{\advisorFirst}[1]{%
   \renewcommand{\@advisorFirst}{#1}}
-\newcommand{\@putAdvisorFirst}{Tutor académico: \@advisorFirst\par}
+\newcommand{\@putAdvisorFirst}{Tutoría: \@advisorFirst\par}
 
 \newcommand{\@advisorSecond}{}
 \newcommand{\advisorSecond}[1]{%
   \renewcommand{\@advisorSecond}{#1}}
-\newcommand{\@putAdvisorSecond}{
-  \@ifmtarg{\@advisorSecond}{Cotutor académico: \@advisorSecond\par}{}}
+\newcommand{\@putAdvisorSecond}{Cotutoría: \@advisorSecond\par}
 
 
 \newcommand{\@advisorDepartment}{}
@@ -446,7 +445,7 @@
       Muchos de los nombres usados por las compañías para diferenciar
       sus productos y servicios son reclamados como marcas
       registradas. Allí donde estos nombres aparezcan en este documento,
-      y cuando el autor haya sido informado de esas marcas registradas,
+      y cuando la persona autora haya sido informada de esas marcas registradas,
       los nombres estarán escritos en mayúsculas o como nombres propios.
     \end{singlespace}
   \end{minipage}
@@ -464,17 +463,17 @@
     \Large \bfseries
     \setstretch{1.3}
 
-    \vspace*{\stretch{6}}
-    \includegraphics[width=4.1cm]{facsocytic_logo.pdf}
+    \vspace*{\stretch{4}}
+    \includegraphics[width=12cm]{head_logo.pdf}
 
-    \vspace*{\stretch{6}}
+    \vspace*{\stretch{4}}
 
-    UNIVERSIDAD DE CASTILLA-LA MANCHA
+    UNIVERSIDAD DE CASTILLA-LA MANCHA \\
     \vspace*{\stretch{1}}
-    ESCUELA SUPERIOR DE INFORMÁTICA
+    Facultad de Ciencias Sociales y Tecnologías de la Información
 
     \vspace*{\stretch{2}}
-    GRADO EN INGENIERÍA EN INFORMÁTICA
+    GRADO EN INGENIERÍA INFORMÁTICA
 
     % \vspace*{\stretch{2}}
     % \begin{spacing}{0.9}
@@ -521,14 +520,11 @@
     \Large \bfseries
     \setstretch{1.3}
 
-    \vspace*{2cm}
-    \includegraphics[width=4.1cm]{facsocytic_logo.pdf}
-
-    \vspace{1.2cm}
+    \vspace*{3cm}
 
     \begin{spacing}{1.09}
-    UNIVERSIDAD DE CASTILLA-LA MANCHA
-    ESCUELA SUPERIOR DE INFORMÁTICA
+    UNIVERSIDAD DE CASTILLA-LA MANCHA \\
+    Facultad de Ciencias Sociales y Tecnologías de la Información
     \end{spacing}
 
     \vspace{0.4cm}
@@ -606,17 +602,17 @@
   \noindent\underline{\textbf{{\Large TRIBUNAL:}}}
   \vspace{1.3cm}
   \par
-  \textbf{{\large Presidente:}} \par
+  \textbf{{\large Presidencia:}} \par
   \vspace{.5cm}
   \textbf{{\large Vocal:}}      \par
   \vspace{.5cm}
-  \textbf{{\large Secretario:}} \par
+  \textbf{{\large Secretaría:}} \par
   \vspace{2.5cm}
   \noindent\underline{\textbf{{\Large FECHA DE DEFENSA:}}} \par
   \vspace{2.2cm}
   \noindent\underline{\textbf{{\Large CALIFICACIÓN:}}} \par
   \vspace{3.6cm}
-  \textbf{PRESIDENTE \hfil\hspace{0.5cm} VOCAL \hfil\hspace{1.2cm} SECRETARIO} \par
+  \textbf{PRESIDENCIA \hfil\hspace{0.5cm} VOCAL \hfil\hspace{1.2cm} SECRETARÍA} \par
   \vspace{3.1cm}
   Fdo.: \hfil Fdo.: \hfil Fdo.: \par
 }
@@ -645,11 +641,11 @@
   \begin{singlespacing}
   \begin{center}
     Este documento fue editado y tipografiado con \LaTeX{} empleando\\
-    la clase \textbf{gita-tfg} {\small (versión \versiondate)} que se puede encontrar en:\\
-    \url{https://github.com/UCLM-ESI/gita-tfg}
+    la clase \textbf{gita-tfg} que se puede encontrar en:\\
+    \url{https://github.com/anarubioruiz/gita-tfg}
 
     \bigskip
-    {\scriptsize [respeta esta atribución al autor]}
+    {\scriptsize [respeta esta atribución de autoría]}
   \end{center}
   \end{singlespacing}
   \cleardoublepage
