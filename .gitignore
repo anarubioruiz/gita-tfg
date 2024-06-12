@@ -8,3 +8,5 @@ syntax: glob
 *.lol
 *.out
 *.toc
+*.fls
+*.fdb_latexmk
