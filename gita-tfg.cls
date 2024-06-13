@@ -28,6 +28,11 @@
   style = nextline,
 }
 
+%% -- Redefinir entorno quote
+\renewenvironment{quote}
+  {\begin{quotation}\itshape}
+  {\end{quotation}}
+
 % Las normas tipográficas que aparecen en los comentarios corresponden al libro:
 % J. Martínez de Sousa. Ortografía y ortotipografía del español actual. Trea, 2008.
 
@@ -56,7 +61,7 @@
 \definecolor{white}{gray}{1}
 \definecolor{gray97}{gray}{0.97}
 \definecolor{gray95}{gray}{0.95}
-\definecolor{gray75}{gray}{0.75}
+\definecolor{gray85}{gray}{0.85}
 \definecolor{gray45}{gray}{0.45}
 \colorlet{tabheadbg}{gray!25}
 \colorlet{tabrowbg} {gray!12.5}
@@ -98,47 +103,46 @@
 % \newcommand{\lstfont}{\ttfamily\fontfamily{pcr}}
 \newcommand{\lstfont}{\ttfamily}
 
+
 \lstset{%
-     aboveskip          = 2mm,
-     belowskip          = 2mm,
-     %
-     frame              = Ltb,
-     framerule          = 0pt,
-     framextopmargin    = 3pt,
-     framexbottommargin = 3pt,
-     framexleftmargin   = 0.4cm,
-     framesep           = 0pt,
-     rulesep            = .4pt,
-     captionpos         = b,
-     floatplacement     = htbp,
-     %
-     basicstyle         = \footnotesize\lstfont,
-     showstringspaces   = false,
-     commentstyle       = \color{gray45},
-     keywordstyle       = \bfseries,
-     %
-     numbers            = none,
-     stepnumber         = 1,
-     numbersep          = 15pt,
-     numberstyle        = \scriptsize,
-     numberblanklines   = false,
-     %
-     breaklines         = true,
-   }
+  backgroundcolor   = \color{gray97},
+  linewidth         = \textwidth,
+  xleftmargin       = 25pt,
+  xrightmargin      = 0pt,
+  aboveskip         = 20pt,
+  belowskip         = 20pt,
+  captionpos        = b,
+  showspaces        = false,
+  showstringspaces  = false,
+  showtabs          = false,
+  tabsize           = 2,
+  keywordstyle      = \bfseries,
+  commentstyle      = \itshape,
+  basicstyle        = \scriptsize\fontfamily{pcr}\selectfont,
+  frame             = leftline,
+  framerule         = 3pt,
+  framexleftmargin  = 8pt,
+  rulecolor         = \color{gray},
+  numbers           = left,
+  numberstyle       = \scriptsize\sffamily,
+  numbersep         = 20pt,
+  inputencoding     = utf8,
+  extendedchars     = true,
+}
 
 \lstnewenvironment{listing}[1][]
-   {\pagebreak[3]\singlespacing\lstset{#1}}%
-   {\pagebreak[3]}
+  {\pagebreak[3]\singlespacing\lstset{#1}}%
+  {\pagebreak[3]}
 
 \lstdefinestyle{consoleStyle}{
   basicstyle=\scriptsize\bf\lstfont,
-  backgroundcolor=\color{gray75},
+  backgroundcolor=\color{gray85},
   numbers=none,
 }
 
 \lstnewenvironment{console}[1][]
-   {\pagebreak[3]\lstset{style=consoleStyle,#1}}
-   {\pagebreak[3]}
+  {\pagebreak[3]\lstset{style=consoleStyle,#1}}
+  {\pagebreak[3]}
 
 
 
