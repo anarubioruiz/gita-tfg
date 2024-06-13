@@ -64,7 +64,7 @@ Por cierto, los títulos de tablas, figuras y otro elementos flotantes (los \tex
 \section{Cuadros}
 \label{sec:uncuadro}
 
-Se denominan «tablas» cuando contienen datos con relaciones numéricas. El término genérico (que debe usarse cuando en los demás casos) es «cuadro»~\cite{sousa}. Si las columnas están bien alineadas, las líneas verticales estorban más que ayudan (no las pongas). Un ejemplo es el Cuadro~\ref{tab:rpc-semantics}.
+Se denominan «tablas» cuando contienen datos con relaciones numéricas. El término genérico (que debe usarse cuando en los demás casos) es «cuadro»~\cite{sousa}. Si las columnas están bien alineadas, las líneas verticales estorban más que ayudan (no las pongas). Un ejemplo es el Cuadro~\ref{tab:rpc-semantics}, que se está generando a partir de un archivo \texttt{.tex} externo (también se pueden definir en el propio documento).
 
 \begin{table}[hp]
   \centering
@@ -79,7 +79,8 @@ Se denominan «tablas» cuando contienen datos con relaciones numéricas. El té
 \section{Listados de código}
 \label{sec:listado}
 
-Puedes referenciar un listado así (ver Listado~\ref{code:hello}). Éste es un listado flotante, pero también pueden ser «no flotantes» quitando el parámetro \texttt{float} (mira el fuente de este documento o la referencia del paquete «listings»\footnote{\url{http://www.ctan.org/get/macros/latex/contrib/listings/listings.pdf}}).
+\noindent
+Puedes referenciar un listado así (ver Listado~\ref{code:hello}).
 
 \begin{listing}[
   float=ht,
@@ -92,12 +93,6 @@ int main(int argc, char *argv[]) {
 }
 \end{listing}
 
-\noindent
-Puedes incluir un fichero de código fuente (o un fragmento) con \texttt{lstinputlisting}:
-
-\lstinputlisting[language=C, firstline=3, texcl]{code/hello.c}
-
-\noindent
 Y también existe un comando \texttt{console} para representar ejecución de comandos:
 
 \begin{console}
