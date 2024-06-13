@@ -1,42 +1,3 @@
-% -*- coding: utf-8 -*-
-
-%
-% Copyright © 2013-2019 David Villa Alises
-% esi-tfg.cls
-%
-% This program is free software; you can redistribute it and/or modify
-% it under the terms of the GNU General Public License as published by
-% the Free Software Foundation; either version 2 of the License, or
-% (at your option) any later version.
-%
-% This program is distributed in the hope that it will be useful,
-% but WITHOUT ANY WARRANTY; without even the implied warranty of
-% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-% GNU General Public License for more details.
-%
-% You should have received a copy of the GNU General Public License
-% along with this program; if not, write to the Free Software
-% Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
-%
-% Modifications © 2024 Ana Rubio Ruiz
-% gita-tfg.cls
-%
-% This modified version of the program includes additional functionality
-% and improvements made by Ana Rubio Ruiz. These modifications are also
-% distributed under the terms of the GNU General Public License as
-% published by the Free Software Foundation; either version 2 of the License,
-% or (at your option) any later version.
-%
-% As with the original program, this modified version is distributed in the
-% hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
-% implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-% See the GNU General Public License for more details.
-%
-% You should have received a copy of the GNU General Public License
-% along with this modified version; if not, write to the Free Software
-% Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{gita-tfg}[2013/08/15 TFG del Grado de Ing. Informática de Talavera de la Reina]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
@@ -53,8 +14,8 @@
 
 %% -- Fundiciones
 \renewcommand{\rmdefault}{ptm}   % times
-\renewcommand{\sfdefault}{lmss}  % lmoderm sans sherif
-\renewcommand{\ttdefault}{lmtt}  % lmoderm typewriter
+\renewcommand{\sfdefault}{phv}   % helvetica
+\renewcommand{\ttdefault}{pcr}   % courier
 
 \usepackage[htt]{hyphenat}
 \usepackage{atbeginend}
@@ -242,15 +203,15 @@
 % - clearempty: Elimina encabezados y pies de páginas (izquierdas) vacías.
 
 \newcommand{\chapterformat}[1]{%
-  \fontsize{22}{22}\selectfont\sffamily #1%
+  \fontsize{22}{22}\selectfont\sffamily\bfseries #1%
 }
 
 % doc: \titleformat{ command }[ shape ]{ format }{ label }{ sep }{ before }[ after ]
 
 \titleformat{\section}
-  {\normalfont\fontsize{15.0pt}{1em}\selectfont\bfseries}{\thesection}{.7em}{}
+  {\normalfont\sffamily\bfseries\fontsize{15.0pt}{1em}\selectfont}{\thesection}{.7em}{}
 \titleformat{\subsection}
-  {\normalfont\fontsize{13.5pt}{1em}\selectfont\bfseries}{\thesubsection}{1em}{}
+  {\normalfont\sffamily\bfseries\fontsize{13.5pt}{1em}\selectfont}{\thesubsection}{1em}{}
 
 % -- standard definitions
 % \titleformat{\chapter}[display]
@@ -278,14 +239,14 @@
 \let\frontmatterorig\frontmatter
 \renewcommand{\frontmatter}{
   \frontmatterorig
-  \singlespacing
+  \onehalfspacing
   \pagestyle{mainstyle}
   \frontchapterformat
 }
 
 \newcommand{\mainchapterformat}{
   \titleformat{\chapter}[display]
-    {\normalfont\large\sffamily}
+    {\normalfont\large\sffamily\bfseries}
     {\chaptertitlename\ \thechapter}
     {0mm}
     {\chapterformat}
@@ -458,33 +419,29 @@
 
 \newcommand{\cover}{%
   \begin{center}
-    \fontsize{60}{22}\selectfont
     \thispagestyle{empty}
-    \Large \bfseries
+    \fontsize{60}{22}\selectfont
+    \bfseries
     \setstretch{1.3}
 
     \vspace*{\stretch{4}}
     \includegraphics[width=12cm]{head_logo.pdf}
-
     \vspace*{\stretch{4}}
 
+    \sffamily
     UNIVERSIDAD DE CASTILLA-LA MANCHA \\
-    \vspace*{\stretch{1}}
-    Facultad de Ciencias Sociales y Tecnologías de la Información
 
-    \vspace*{\stretch{2}}
+    \bfseries\Large  % Bold weight for the degree
     GRADO EN INGENIERÍA INFORMÁTICA
 
-    % \vspace*{\stretch{2}}
-    % \begin{spacing}{0.9}
-    %  {\normalsize TECNOLOGÍA ESPECÍFICA DE\\\MakeUppercase{\@intensification}}
-    % \end{spacing}
+    \vspace*{\stretch{2}}
 
-    % \vspace*{\stretch{3}}
-    % TRABAJO FIN DE GRADO
+    \normalfont\Large\sffamily  % Normal weight for "Trabajo Fin de Grado"
+    Trabajo Fin de Grado
+
 
     \vspace*{\stretch{4}}
-    {\LARGE \@title}
+    {\LARGE\bfseries \@title}
 
     \vspace*{\stretch{2}}
     {\large \@author}
@@ -494,10 +451,11 @@
 
   \vfill
   \hfill
-  {\large \textbf{\@docmonth, \@docyear}}
+  {\large\sffamily \textbf{\@docmonth, \@docyear}}
   \vspace{\stretch{1}}
   \cleardoublepage
 }
+
 
 % - portadilla
 % Sólo aparece el título de la obra a la misma altura, fuente y estilo
@@ -515,37 +473,39 @@
 }
 
 \newcommand{\frontpage}{%
-  \thispagestyle{empty}
   \begin{center}
-    \Large \bfseries
+    \thispagestyle{empty}
+    \fontsize{60}{22}\selectfont
+    \bfseries
     \setstretch{1.3}
 
-    \vspace*{3cm}
+    \vspace*{\stretch{6}}
+    \includegraphics[width=12cm]{head_logo.pdf}
+    \vspace*{\stretch{6}}
 
-    \begin{spacing}{1.09}
+    \sffamily
     UNIVERSIDAD DE CASTILLA-LA MANCHA \\
-    Facultad de Ciencias Sociales y Tecnologías de la Información
-    \end{spacing}
-
-    \vspace{0.4cm}
-
     \@advisorDepartment
 
-    \vspace*{\stretch{6}}
+    \vspace*{\stretch{2}}
 
-    GRADO EN INGENIERÍA EN INFORMÁTICA
+    \bfseries\Large  % Bold weight for the degree
+    GRADO EN INGENIERÍA INFORMÁTICA \\
+    {\normalsize \MakeUppercase{\@intensification}}
 
-    \begin{spacing}{0.9}
-      {\normalsize \MakeUppercase{\@intensification}}
-    \end{spacing}
+    \vspace*{\stretch{4}}
 
-    \vspace*{\stretch{6}}
-    {\LARGE \@title}
+    \normalfont\Large\sffamily  % Normal weight for "Trabajo Fin de Grado"
+    Trabajo Fin de Grado
+
+    \vspace*{\stretch{4}}
+
+    {\LARGE\bfseries \@title}
   \end{center}
 
-  \vspace*{\stretch{7}}
+  \vspace*{\stretch{4}}
 
-  {\large \bfseries
+  {\sffamily
     \@putAuthor
     \@putAdvisorFirst
     \@putAdvisorSecond
@@ -555,7 +515,7 @@
 
   \vfill
   \hfill
-  {\large \@docmonth, \@docyear}
+  {\large\bfseries\sffamily \@docmonth, \@docyear}
   \cleardoublepage
 }
 
@@ -574,7 +534,7 @@
   \newpage
   \begin{singlespace}
     \null \vfill \noindent
-    \textbf{\@author} \par
+    \textbf{\sffamily\@author} \par
     \smallskip \noindent
     \@city\ -- \@country
 
@@ -598,6 +558,7 @@
 
 
 \newcommand{\jury}{%
+{\sffamily
   \vspace*{2cm}
   \noindent\underline{\textbf{{\Large TRIBUNAL:}}}
   \vspace{1.3cm}
@@ -615,6 +576,7 @@
   \textbf{PRESIDENCIA \hfil\hspace{0.5cm} VOCAL \hfil\hspace{1.2cm} SECRETARÍA} \par
   \vspace{3.1cm}
   Fdo.: \hfil Fdo.: \hfil Fdo.: \par
+}
 }
 
 \addto\captionsspanish{\renewcommand{\appendixname}{Anexo}}
