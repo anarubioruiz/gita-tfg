@@ -1,0 +1,15 @@
+syntax: glob
+
+*.aux
+*.bbl
+*.blg
+*.lof
+*.log
+*.lol
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.lot
+*.pdf
+*.synctex.gz
