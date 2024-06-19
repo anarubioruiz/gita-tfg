@@ -1,6 +1,6 @@
 # GITA-TFG
 
-**GITA-TFG** es una clase LaTeX para escribir cómodamente la memoria del TFG (Trabajo Fin de Grado) basada en la clase [esi-tfg](https://github.com/UCLM-ESI/esi-tfg) creada por David Villa Alises para la Escuela Superior de Informática de Ciudad Real. GITA-TFG se corresponde con la especificación de formato del Grado en Ingeniería Informática de la Facultad de Ciencias Sociales y Tecnologías de la Información de Talavera de la Reina, pero es sencillo adaptarla si estudias en otro sitio.
+**GITA-TFG** es una clase LaTeX para escribir cómodamente la memoria del TFG (Trabajo Fin de Grado) basada en la clase [esi-tfg](https://github.com/UCLM-ESI/esi-tfg) creada para la Escuela Superior de Informática de Ciudad Real. GITA-TFG se corresponde con la especificación de formato del Grado en Ingeniería Informática de la Facultad de Ciencias Sociales y Tecnologías de la Información de Talavera de la Reina, pero es sencillo adaptarla si estudias en otro sitio.
 
 La normativa actual se puede encontrar en:
 
