@@ -1,0 +1,144 @@
+\chapter{Antecedentes}
+\label{chap:antecedentes}
+
+\drop{E}{ste} capítulo incluye unas nociones básicas de \LaTeX{} y algunos consejos sencillos de composición para sacar todo el jugo a la clase \gitatfg. Ten presente que este capítulo está pensado para que leas el código fuente y lo compares con el resultado en PDF.
+
+\section{Estilos de texto}
+
+A continuación se muestran algunos estilos de texto básicos que puedes usar en \LaTeX{}. Fíjate en el código fuente para ver cómo se han obtenido.
+
+\begin{itemize}
+  \item Normal.
+  \item \textbf{Negrita}
+  \item \textit{Itálica}
+  \item \emph{Enfatizada}. Fíjate que el estilo que se obtiene al enfatizar depende del estilo del texto en el que se incluya: \textit{texto en itálica y \emph{enfatizado} en medio}.
+  \item \texttt{Monoespaciada}
+\end{itemize}
+
+Otros de menos uso:
+
+\begin{itemize}
+  \item \textsc{Versalita}
+  \item \textsf{Serifa}, es decir, sin remates o paloseco
+  \item \textrm{Romana}
+\end{itemize}
+
+
+\section{Viñetas y enumerados}
+
+En \LaTeX{} hay tres tipos básicos de viñetas:
+
+\begin{enumerate}
+  \item \texttt{itemize}, para viñetas sin orden (listado anterior).
+  \item \texttt{enumerate}, para listas numeradas (como esta).
+  \item \texttt{description}, con un formato especial: \texttt{\textbackslash item[<etiqueta>] <descripción>}.
+\end{enumerate}
+
+
+Es posible hacer viñetas (como la siguiente) cambiando márgenes u otras propiedades gracias al paquete \href{http://mirror.ctan.org/macros/latex/contrib/enumitem/enumitem.pdf}{\emph{enumitem}} (ya incluido en \gitatfg).
+
+\begin{itemize}[noitemsep, label=$\triangleright$]
+  \item esto es
+  \item una pequeña
+  \item muestra
+\end{itemize}
+
+El paquete \emph{enumitem} ofrece muchas otras posibilidades para personalizar las viñetas (individual o globalmente) o crear nuevas.
+
+
+\section{Figuras}
+
+Las figuras se referencian así (ver Figura~\ref{fig:fac}). Recuerda que no tienen porqué aparecer en el lugar donde se ponen (mira un libro de verdad). \LaTeX{} las colocará donde mejor queden, No te empeñes en contradecirle, él sabe mucho de tipografía.
+
+\begin{figure}[!h]
+\begin{center}
+  \includegraphics[width=0.5\textwidth]{facsocytic_logo.pdf}
+  \caption{Logotipo de de la Facultad}
+  \label{fig:fac}
+\end{center}
+\end{figure}
+
+Por cierto, los títulos de tablas, figuras y otro elementos flotantes (los \texttt{caption}) no deben acabar en punto~\cite{sousa}.
+
+
+\section{Cuadros}
+\label{sec:uncuadro}
+
+Se denominan «tablas» cuando contienen datos con relaciones numéricas. El término genérico (que debe usarse cuando en los demás casos) es «cuadro»~\cite{sousa}. Si las columnas están bien alineadas, las líneas verticales estorban más que ayudan (no las pongas). Un ejemplo es el Cuadro~\ref{tab:rpc-semantics}, que se está generando a partir de un archivo \texttt{.tex} externo (también se pueden definir en el propio documento).
+
+\begin{table}[hp]
+  \centering
+  {\small
+  \input{tables/RPC-semantics.tex}
+  }
+  \caption[Semánticas de \acs{RPC} en presencia de distintos fallos]{Semánticas de \acs{RPC} en presencia de distintos fallos (\textsc{Puder}~\cite{puder05:_distr_system_archit})}
+  \label{tab:rpc-semantics}
+\end{table}
+
+
+\section{Listados de código}
+\label{sec:listado}
+
+\noindent
+Puedes referenciar un listado así (ver Listado~\ref{code:hello}).
+
+\begin{listing}[
+  float=ht,
+  language = C,
+  caption  = {«Hola mundo» en C},
+  label    = code:hello]
+#include <stdio.h>
+int main(int argc, char *argv[]) {
+    puts("Hola mundo\n");
+}
+\end{listing}
+
+Y también existe un comando \texttt{console} para representar ejecución de comandos:
+
+\begin{console}
+$ uname --operating-system
+GNU/Linux
+\end{console} %$
+
+Puedes modificar el estilo por defecto para tus listados añadiendo un comando \texcmd{lstset} en tu \texttt{custom.sty}. El código \LaTeX{} del listado \ref{code:custom-listings} añade un fondo gris claro y una línea en el margen izquierdo.
+
+\begin{listing}[
+  float=h!,
+  caption  = {Personalizando los listados de código},
+  label    = code:custom-listings]
+\lstset{%
+  backgroundcolor = \color{gray95},
+  rulesepcolor    = \color{black},
+}
+\end{listing}
+
+En cualquier caso, si lo necesitas siempre es mejor que redefinas los comandos y entornos existentes o crees entornos nuevos, en lugar de añadir los mismos cambios en muchas partes del documento.
+
+
+\section{Citas y referencias cruzadas}
+
+Puedes ver aquí una cita~\cite{design_patterns}. Aunque incluyas una entrada en la bibliografía, solo aparecerá si la citas en el texto. \textbf{NO} puedes listar la bibliografía al final de cada sección, tiene que quedar claro dónde has usado cada fuente (cita incluso a nivel de frase, como al principio de esta sección). Por supuesto, las fuentes deben ser fiables y relevantes (no cites a Wikipedia, blogs, etc.). Cita siempre que uses información que no sea tuya para escribir la memoria, añade enlaces a pie de página cuando quieras proporcionar enlaces que pueden ser de interés para el lector (por ejemplo, la de la universidad\footnote{\url{http://www.uclm.es}}).
+
+Aquí tienes una referencia a la segunda sección (véase \S\,\ref{sec:uncuadro}). Para hacer referencias debes definir etiquetas en el punto que quieras referenciar (normalmente justo debajo). Es útil que los nombres de las etiquetas (comando \texttt{label}) tengan los siguientes prefijos (incluyendo los dos puntos ``:'' del final):
+
+\begin{description}
+  \item[\emph{chap:}] para los capítulos. Ej: ``\texttt{chap:objetivos}''.
+  \item[\emph{sec:}] para secciones, subsecciones, etc.
+  \item[\emph{fig:}] para las figuras.
+  \item[\emph{tab:}] para las tablas.
+  \item[\emph{code:}] para los listados de código.
+\end{description}
+
+Si estás viendo la versión PDF de este documento puedes pinchar la cita o el número de sección. Son hiper-enlaces que llevan al elemento correspondiente. Todos los elementos que hacen referencia a otra cosa (figuras, tablas, listados, secciones, capítulos, citas, páginas web, etc.) son «pinchables» gracias al paquete \href{http://latex.tugraz.at/_media/docs/hyperref.pdf}{\emph{hyperref}}. Para citar páginas web usa el comando \texttt{url} como en: \url{http://www.uclm.es}
+
+\section{Acrónimos}
+En el archivo \texttt{acro.tex} se definen los acrónimos que se usan en el documento, encontrarás comentado ejemplos de cómo usarlos. La forma más simple de uso es el comando \texttt{\textbackslash ac\{<acrónimo>\}}, que hará que el término aparezca en su forma larga la primera vez que se use y en la corta las siguientes. Por ejemplo, \ac{RPC} la primera vez; \ac{RPC} las siguientes. Observa en el código fuente cómo se ha hecho.
+
+
+
+% Local Variables:
+%  coding: utf-8
+%  mode: latex
+%  mode: flyspell
+%  ispell-local-dictionary: "castellano8"
+% End:

@@ -53,8 +53,8 @@
 
 %% -- Fundiciones
 \renewcommand{\rmdefault}{ptm}   % times
-\renewcommand{\sfdefault}{lmss}  % lmoderm sans sherif
-\renewcommand{\ttdefault}{lmtt}  % lmoderm typewriter
+\renewcommand{\sfdefault}{phv}   % helvetica
+\renewcommand{\ttdefault}{pcr}   % courier
 
 \usepackage[htt]{hyphenat}
 \usepackage{atbeginend}
@@ -66,6 +66,11 @@
 \setlist[definitionlist]{
   style = nextline,
 }
+
+%% -- Redefinir entorno quote
+\renewenvironment{quote}
+  {\begin{quotation}\itshape}
+  {\end{quotation}}
 
 % Las normas tipográficas que aparecen en los comentarios corresponden al libro:
 % J. Martínez de Sousa. Ortografía y ortotipografía del español actual. Trea, 2008.
@@ -95,7 +100,7 @@
 \definecolor{white}{gray}{1}
 \definecolor{gray97}{gray}{0.97}
 \definecolor{gray95}{gray}{0.95}
-\definecolor{gray75}{gray}{0.75}
+\definecolor{gray85}{gray}{0.85}
 \definecolor{gray45}{gray}{0.45}
 \colorlet{tabheadbg}{gray!25}
 \colorlet{tabrowbg} {gray!12.5}
@@ -137,47 +142,46 @@
 % \newcommand{\lstfont}{\ttfamily\fontfamily{pcr}}
 \newcommand{\lstfont}{\ttfamily}
 
+
 \lstset{%
-     aboveskip          = 2mm,
-     belowskip          = 2mm,
-     %
-     frame              = Ltb,
-     framerule          = 0pt,
-     framextopmargin    = 3pt,
-     framexbottommargin = 3pt,
-     framexleftmargin   = 0.4cm,
-     framesep           = 0pt,
-     rulesep            = .4pt,
-     captionpos         = b,
-     floatplacement     = htbp,
-     %
-     basicstyle         = \footnotesize\lstfont,
-     showstringspaces   = false,
-     commentstyle       = \color{gray45},
-     keywordstyle       = \bfseries,
-     %
-     numbers            = none,
-     stepnumber         = 1,
-     numbersep          = 15pt,
-     numberstyle        = \scriptsize,
-     numberblanklines   = false,
-     %
-     breaklines         = true,
-   }
+  backgroundcolor   = \color{gray97},
+  linewidth         = \textwidth,
+  xleftmargin       = 25pt,
+  xrightmargin      = 0pt,
+  aboveskip         = 20pt,
+  belowskip         = 20pt,
+  captionpos        = b,
+  showspaces        = false,
+  showstringspaces  = false,
+  showtabs          = false,
+  tabsize           = 2,
+  keywordstyle      = \bfseries,
+  commentstyle      = \itshape,
+  basicstyle        = \scriptsize\fontfamily{pcr}\selectfont,
+  frame             = leftline,
+  framerule         = 3pt,
+  framexleftmargin  = 8pt,
+  rulecolor         = \color{gray},
+  numbers           = left,
+  numberstyle       = \scriptsize\sffamily,
+  numbersep         = 20pt,
+  inputencoding     = utf8,
+  extendedchars     = true,
+}
 
 \lstnewenvironment{listing}[1][]
-   {\pagebreak[3]\singlespacing\lstset{#1}}%
-   {\pagebreak[3]}
+  {\pagebreak[3]\singlespacing\lstset{#1}}%
+  {\pagebreak[3]}
 
 \lstdefinestyle{consoleStyle}{
   basicstyle=\scriptsize\bf\lstfont,
-  backgroundcolor=\color{gray75},
+  backgroundcolor=\color{gray85},
   numbers=none,
 }
 
 \lstnewenvironment{console}[1][]
-   {\pagebreak[3]\lstset{style=consoleStyle,#1}}
-   {\pagebreak[3]}
+  {\pagebreak[3]\lstset{style=consoleStyle,#1}}
+  {\pagebreak[3]}
 
 
 
@@ -242,15 +246,15 @@
 % - clearempty: Elimina encabezados y pies de páginas (izquierdas) vacías.
 
 \newcommand{\chapterformat}[1]{%
-  \fontsize{22}{22}\selectfont\sffamily #1%
+  \fontsize{22}{22}\selectfont\sffamily\bfseries #1%
 }
 
 % doc: \titleformat{ command }[ shape ]{ format }{ label }{ sep }{ before }[ after ]
 
 \titleformat{\section}
-  {\normalfont\fontsize{15.0pt}{1em}\selectfont\bfseries}{\thesection}{.7em}{}
+  {\normalfont\sffamily\bfseries\fontsize{15.0pt}{1em}\selectfont}{\thesection}{.7em}{}
 \titleformat{\subsection}
-  {\normalfont\fontsize{13.5pt}{1em}\selectfont\bfseries}{\thesubsection}{1em}{}
+  {\normalfont\sffamily\bfseries\fontsize{13.5pt}{1em}\selectfont}{\thesubsection}{1em}{}
 
 % -- standard definitions
 % \titleformat{\chapter}[display]
@@ -278,14 +282,14 @@
 \let\frontmatterorig\frontmatter
 \renewcommand{\frontmatter}{
   \frontmatterorig
-  \singlespacing
+  \onehalfspacing
   \pagestyle{mainstyle}
   \frontchapterformat
 }
 
 \newcommand{\mainchapterformat}{
   \titleformat{\chapter}[display]
-    {\normalfont\large\sffamily}
+    {\normalfont\large\sffamily\bfseries}
     {\chaptertitlename\ \thechapter}
     {0mm}
     {\chapterformat}
@@ -458,33 +462,29 @@
 
 \newcommand{\cover}{%
   \begin{center}
-    \fontsize{60}{22}\selectfont
     \thispagestyle{empty}
-    \Large \bfseries
+    \fontsize{60}{22}\selectfont
+    \bfseries
     \setstretch{1.3}
 
     \vspace*{\stretch{4}}
     \includegraphics[width=12cm]{head_logo.pdf}
-
     \vspace*{\stretch{4}}
 
+    \sffamily
     UNIVERSIDAD DE CASTILLA-LA MANCHA \\
-    \vspace*{\stretch{1}}
-    Facultad de Ciencias Sociales y Tecnologías de la Información
 
-    \vspace*{\stretch{2}}
+    \bfseries\Large  % Bold weight for the degree
     GRADO EN INGENIERÍA INFORMÁTICA
 
-    % \vspace*{\stretch{2}}
-    % \begin{spacing}{0.9}
-    %  {\normalsize TECNOLOGÍA ESPECÍFICA DE\\\MakeUppercase{\@intensification}}
-    % \end{spacing}
+    \vspace*{\stretch{2}}
 
-    % \vspace*{\stretch{3}}
-    % TRABAJO FIN DE GRADO
+    \normalfont\Large\sffamily  % Normal weight for "Trabajo Fin de Grado"
+    Trabajo Fin de Grado
+
 
     \vspace*{\stretch{4}}
-    {\LARGE \@title}
+    {\LARGE\bfseries \@title}
 
     \vspace*{\stretch{2}}
     {\large \@author}
@@ -494,10 +494,11 @@
 
   \vfill
   \hfill
-  {\large \textbf{\@docmonth, \@docyear}}
+  {\large\sffamily \textbf{\@docmonth, \@docyear}}
   \vspace{\stretch{1}}
   \cleardoublepage
 }
+
 
 % - portadilla
 % Sólo aparece el título de la obra a la misma altura, fuente y estilo
@@ -515,37 +516,39 @@
 }
 
 \newcommand{\frontpage}{%
-  \thispagestyle{empty}
   \begin{center}
-    \Large \bfseries
+    \thispagestyle{empty}
+    \fontsize{60}{22}\selectfont
+    \bfseries
     \setstretch{1.3}
+    git config pull.rebase false
+    \vspace*{\stretch{6}}
+    \includegraphics[width=12cm]{head_logo.pdf}
+    \vspace*{\stretch{6}}
 
-    \vspace*{3cm}
-
-    \begin{spacing}{1.09}
+    \sffamily
     UNIVERSIDAD DE CASTILLA-LA MANCHA \\
-    Facultad de Ciencias Sociales y Tecnologías de la Información
-    \end{spacing}
-
-    \vspace{0.4cm}
-
     \@advisorDepartment
 
-    \vspace*{\stretch{6}}
+    \vspace*{\stretch{2}}
 
-    GRADO EN INGENIERÍA EN INFORMÁTICA
+    \bfseries\Large  % Bold weight for the degree
+    GRADO EN INGENIERÍA INFORMÁTICA \\
+    {\normalsize \MakeUppercase{\@intensification}}
 
-    \begin{spacing}{0.9}
-      {\normalsize \MakeUppercase{\@intensification}}
-    \end{spacing}
+    \vspace*{\stretch{4}}
 
-    \vspace*{\stretch{6}}
-    {\LARGE \@title}
+    \normalfont\Large\sffamily  % Normal weight for "Trabajo Fin de Grado"
+    Trabajo Fin de Grado
+
+    \vspace*{\stretch{4}}
+
+    {\LARGE\bfseries \@title}
   \end{center}
 
-  \vspace*{\stretch{7}}
+  \vspace*{\stretch{4}}
 
-  {\large \bfseries
+  {\sffamily
     \@putAuthor
     \@putAdvisorFirst
     \@putAdvisorSecond
@@ -555,7 +558,7 @@
 
   \vfill
   \hfill
-  {\large \@docmonth, \@docyear}
+  {\large\bfseries\sffamily \@docmonth, \@docyear}
   \cleardoublepage
 }
 
@@ -574,7 +577,7 @@
   \newpage
   \begin{singlespace}
     \null \vfill \noindent
-    \textbf{\@author} \par
+    \textbf{\sffamily\@author} \par
     \smallskip \noindent
     \@city\ -- \@country
 
@@ -598,6 +601,7 @@
 
 
 \newcommand{\jury}{%
+{\sffamily
   \vspace*{2cm}
   \noindent\underline{\textbf{{\Large TRIBUNAL:}}}
   \vspace{1.3cm}
@@ -615,6 +619,7 @@
   \textbf{PRESIDENCIA \hfil\hspace{0.5cm} VOCAL \hfil\hspace{1.2cm} SECRETARÍA} \par
   \vspace{3.1cm}
   Fdo.: \hfil Fdo.: \hfil Fdo.: \par
+}
 }
 
 \addto\captionsspanish{\renewcommand{\appendixname}{Anexo}}
