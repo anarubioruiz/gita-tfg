@@ -22,13 +22,13 @@
 % Modifications © 2024 Ana Rubio Ruiz
 % gita-tfg.cls
 %
-% This modified version of the program includes additional functionality
-% and improvements made by Ana Rubio Ruiz. These modifications are also
+% This modified version of the program includes additional content and
+% style changes made by Ana Rubio Ruiz. These modifications are also
 % distributed under the terms of the GNU General Public License as
 % published by the Free Software Foundation; either version 2 of the License,
 % or (at your option) any later version.
 %
-% As with the original program, this modified version is distributed in the
+% As with the original version, this modified version is distributed in the
 % hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
 % implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 % See the GNU General Public License for more details.
@@ -640,9 +640,12 @@
   \rule{0pt}{8cm}
   \begin{singlespacing}
   \begin{center}
-    Este documento fue editado y tipografiado con \LaTeX{} empleando\\
-    la clase \textbf{gita-tfg} que se puede encontrar en:\\
+    Este documento fue editado y tipografiado con \LaTeX{}\\
+    empleando la clase \textbf{gita-tfg} que se puede encontrar en:\\
     \url{https://github.com/anarubioruiz/gita-tfg}
+
+    La clase \textbf{gita-tfg} está basada en la clase \textbf{esi-tfg}:\\
+    \url{https://github.com/UCLM-ESI/esi-tfg}
 
     \bigskip
     {\scriptsize [respeta esta atribución de autoría]}
