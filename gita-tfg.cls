@@ -1,3 +1,42 @@
+% -*- coding: utf-8 -*-
+
+%
+% Copyright © 2013-2019 David Villa Alises
+% esi-tfg.cls
+%
+% This program is free software; you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation; either version 2 of the License, or
+% (at your option) any later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program; if not, write to the Free Software
+% Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+%
+% Modifications © 2024 Ana Rubio Ruiz
+% gita-tfg.cls
+%
+% This modified version of the program includes additional content and
+% style changes made by Ana Rubio Ruiz. These modifications are also
+% distributed under the terms of the GNU General Public License as
+% published by the Free Software Foundation; either version 2 of the License,
+% or (at your option) any later version.
+%
+% As with the original version, this modified version is distributed in the
+% hope that it will be useful, but WITHOUT ANY WARRANTY; without even the
+% implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+% See the GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this modified version; if not, write to the Free Software
+% Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{gita-tfg}[2013/08/15 TFG del Grado de Ing. Informática de Talavera de la Reina]
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
@@ -482,7 +521,7 @@
     \fontsize{60}{22}\selectfont
     \bfseries
     \setstretch{1.3}
-
+    git config pull.rebase false
     \vspace*{\stretch{6}}
     \includegraphics[width=12cm]{head_logo.pdf}
     \vspace*{\stretch{6}}
@@ -606,9 +645,12 @@
   \rule{0pt}{8cm}
   \begin{singlespacing}
   \begin{center}
-    Este documento fue editado y tipografiado con \LaTeX{} empleando\\
-    la clase \textbf{gita-tfg} que se puede encontrar en:\\
+    Este documento fue editado y tipografiado con \LaTeX{}\\
+    empleando la clase \textbf{gita-tfg} que se puede encontrar en:\\
     \url{https://github.com/anarubioruiz/gita-tfg}
+
+    La clase \textbf{gita-tfg} está basada en la clase \textbf{esi-tfg}:\\
+    \url{https://github.com/UCLM-ESI/esi-tfg}
 
     \bigskip
     {\scriptsize [respeta esta atribución de autoría]}
