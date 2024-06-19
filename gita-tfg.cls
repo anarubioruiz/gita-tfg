@@ -521,7 +521,7 @@
     \fontsize{60}{22}\selectfont
     \bfseries
     \setstretch{1.3}
-    git config pull.rebase false
+
     \vspace*{\stretch{6}}
     \includegraphics[width=12cm]{head_logo.pdf}
     \vspace*{\stretch{6}}
