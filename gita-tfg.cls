@@ -375,6 +375,10 @@
   \renewcommand{\@authortitle}{#2}}
 \newcommand{\theauthor}{\@author}
 
+\newcommand{\@titleOther}{}
+\newcommand{\titleOther}[1]{%
+  \renewcommand{\@titleOther}{#1}}
+
 \newcommand{\@putAuthor}{
   Autoría: \@author\par}
 
@@ -484,7 +488,9 @@
 
 
     \vspace*{\stretch{4}}
-    {\LARGE\bfseries \@title}
+    {\LARGE\bfseries \@title} \\
+    \vspace*{\stretch{2}}
+    {\large\itshape \@titleOther}
 
     \vspace*{\stretch{2}}
     {\large \@author}
@@ -543,7 +549,9 @@
 
     \vspace*{\stretch{4}}
 
-    {\LARGE\bfseries \@title}
+    {\LARGE\bfseries \@title} \\
+    \vspace*{\stretch{2}}
+    {\large\itshape \@titleOther}
   \end{center}
 
   \vspace*{\stretch{4}}
