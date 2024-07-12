@@ -78,12 +78,12 @@
 %% -- MEDIDAS Y DISTANCIAS -----------------------------------------------------
 \usepackage[left=35mm, right=20mm, top=25mm, bottom=25mm]{geometry}
 \usepackage{setspace}
-\setlength{\parskip}{2mm plus 0.2mm minus 0.2mm}
+\setlength{\parskip}{2.5mm plus 0.2mm minus 0.2mm}
 
 %% Párrafos
 % La indentación que precede al párrafo normal debe ser de un
 % cuadratín (1em) (-> 13.4.1.1)
-\parindent   = 1em
+\parindent   = 0em
 
 % El espacio en blanco al final de una línea corta debe ser mayor que
 % la indentación del párrafo. (-> 13.4.1.1)
