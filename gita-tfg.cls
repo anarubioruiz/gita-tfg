@@ -549,9 +549,7 @@
 
     \vspace*{\stretch{4}}
 
-    {\LARGE\bfseries \@title} \\
-    \vspace*{\stretch{2}}
-    {\large\itshape \@titleOther}
+    {\LARGE\bfseries \@title}
   \end{center}
 
   \vspace*{\stretch{4}}
