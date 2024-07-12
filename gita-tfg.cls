@@ -580,6 +580,30 @@
   \cleardoublepage
 }
 
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\newcommand{\autorship}[1]{%
+  \cleardoublepage
+  \chapter*{Declaración de autoría}
+  Yo, \@author, declaro que soy la única persona autora del trabajo fin de grado titulado \@title, que el citado trabajo no infringe las leyes vigentes sobre propiedad intelectual, y que todo el material no original contenido en dicho trabajo está apropiadamente atribuido a quienes corresponda.
+
+  \centering{
+    \vspace{1cm}
+    \begin{tabular}{c}
+      \textbf{\@city, \today}
+    \end{tabular}
+
+    \vspace{2cm}
+
+    \begin{tikzpicture}[remember picture, overlay]
+      \draw ($(current page.center) + (-3.5,0)$) rectangle ($(current page.center) + (5,3)$);
+      \node at ($(current page.center) + (-4.2,0.3)$) {Fdo.:};
+  \end{tikzpicture}
+
+  }
+  \cleardoublepage
+}
+
 
 \newcommand{\copyrightpage}{%
   \newpage
