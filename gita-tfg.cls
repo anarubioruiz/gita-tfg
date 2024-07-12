@@ -145,11 +145,11 @@
 
 \lstset{%
   backgroundcolor   = \color{gray97},
-  linewidth         = \textwidth,
+  linewidth         = \linewidth,
   xleftmargin       = 25pt,
   xrightmargin      = 0pt,
-  aboveskip         = 20pt,
-  belowskip         = 20pt,
+  aboveskip         = 15pt,
+  belowskip         = 15pt,
   captionpos        = b,
   showspaces        = false,
   showstringspaces  = false,
@@ -157,7 +157,7 @@
   tabsize           = 2,
   keywordstyle      = \bfseries,
   commentstyle      = \itshape,
-  basicstyle        = \scriptsize\fontfamily{pcr}\selectfont,
+  basicstyle        = \footnotesize\fontfamily{pcr}\selectfont,
   frame             = leftline,
   framerule         = 3pt,
   framexleftmargin  = 8pt,
@@ -167,6 +167,9 @@
   numbersep         = 20pt,
   inputencoding     = utf8,
   extendedchars     = true,
+  breaklines        = true,
+  breakatwhitespace = true,
+  postbreak         = \mbox{\textcolor{red}{$\hookrightarrow$\space}},
 }
 
 \lstnewenvironment{listing}[1][]
@@ -174,7 +177,7 @@
   {\pagebreak[3]}
 
 \lstdefinestyle{consoleStyle}{
-  basicstyle=\scriptsize\bf\lstfont,
+  basicstyle=\footnotesize\bf\lstfont,
   backgroundcolor=\color{gray85},
   numbers=none,
 }
@@ -210,7 +213,6 @@
     linkcolor      = black,
     citecolor      = black,
     urlcolor=      = black,
-    % backref, % debug: refs desde la bibliografía
     ]{hyperref}
 
 \hypersetup{
