@@ -207,6 +207,7 @@
 %% -- HIPER-ENLACES PARA PDF ---------------------------------------------------
 \usepackage[%
     bookmarks,
+    breaklinks,
     hyperfootnotes = false,
     pdfview        = {fitv},
     colorlinks,
@@ -232,7 +233,7 @@
 
 
 %% -- BIBLIOGRAFÍA -------------------------------------------------------------
-\bibliographystyle{es-alpha}
+\bibliographystyle{acm}
 
 \newcommand{\bibfont}{\small}      % Bibliography's font size
 %% \setlength{\bibhang}{4ex}       % Indent of Bibliography entries
@@ -512,16 +513,6 @@
 % Sólo aparece el título de la obra a la misma altura, fuente y estilo
 % que en la portada pero en un tamaño 2/3 el de ésta. Opcionalmente
 % puede aparecer el autor.
-\newcommand{\bastardtitle}{%
-  \thispagestyle{empty}
-  \vspace*{\stretch{8}}%
-  \begin{center}%
-    {\large \textsc{\@title}}
-    \par
-  \end{center}%
-  \vspace*{\stretch{2.3}}%
-  \cleardoublepage
-}
 
 \newcommand{\frontpage}{%
   \begin{center}
