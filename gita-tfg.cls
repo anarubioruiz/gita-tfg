@@ -475,7 +475,7 @@
     \setstretch{1.3}
 
     \vspace*{\stretch{4}}
-    \includegraphics[width=12cm]{head_logo.pdf}
+    \includegraphics[width=14cm]{F_CCSSTI_UCLM.png}
     \vspace*{\stretch{4}}
 
     \sffamily
@@ -522,7 +522,7 @@
     \setstretch{1.3}
 
     \vspace*{\stretch{6}}
-    \includegraphics[width=12cm]{head_logo.pdf}
+    \includegraphics[width=14cm]{F_CCSSTI_UCLM.png}
     \vspace*{\stretch{6}}
 
     \sffamily
